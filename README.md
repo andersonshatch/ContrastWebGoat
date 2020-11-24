@@ -2,6 +2,9 @@
 
 This repo details a few different approaches you can use to add Contrast's Java agent to a Docker container, using WebGoat as a demo application.
 
+A specific version of the Contrast Java agent is retrieved from Maven Central at build time, where the version is specified as a build argument in `docker-build.sh` and `docker-compose.yml`.
+You should update the version in these files to match the version available in your Contrast environment. Use of `LATEST` is possible, though not recommended especially for on-premise Contrast users.
+
 The `JAVA_TOOL_OPTIONS` variable is used in order to add the `-javaagent:contrast.jar` file to the JVM startup options, conditionally.
 
 ## Setup
