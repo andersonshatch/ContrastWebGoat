@@ -1,0 +1,17 @@
+version: "3"
+services:
+  webgoat:
+    build:
+      context: ./
+      args:
+        CONTRAST_AGENT_VERSION: 3.7.10.17525
+    ports:
+      - '8888:8080'
+    environment:
+      - JAVA_TOOL_OPTIONS
+      - CONTRAST__API__URL
+      - CONTRAST__API__USER_NAME
+      - CONTRAST__API__API_KEY
+      - CONTRAST__API__SERVICE_KEY
+      - CONTRAST__API__JAVA__STANDALONE_APP_NAME
+      - CONTRAST__AGENT__LOGGER_STDOUT
