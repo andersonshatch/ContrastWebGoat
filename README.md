@@ -14,8 +14,11 @@ The `JAVA_TOOL_OPTIONS` variable is used in order to add the `-javaagent:contras
 ## Running with Docker locally
 1. Run `./docker-build.sh` to build the container
 1. Run `./docker-run.sh` to run the built container
+1. Answer y/n to the `Run with Contrast? [Y/N]` prompt
 
-At present this will always load Contrast.
+When you answer yes, docker is invoked with the `contrast.env` file, so Contrast will be loaded.
+
+When you answer no, this environment file is not used and the application runs without Contrast.
 
 ## Running with Docker Compose
 1. Run `./docker-compose-run.sh`

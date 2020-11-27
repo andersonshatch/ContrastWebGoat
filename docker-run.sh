@@ -14,7 +14,11 @@ else
     echo "Please configure contrast.env from the template contrast.env.tmpl" && exit 1
 fi
 
-docker run -it \
-	-p 8888:8080 \
-	--env-file contrast.env \
-	$IMAGE_ID
+
+while true; do
+	read -p "Run with Contrast? [Y/N] " yn
+	case $yn in
+		[Yy]* ) docker run -it -p 8888:8080 --env-file=contrast.env $IMAGE_ID; break;;
+		[Nn]* ) docker run -it -p 8888:8080 $IMAGE_ID; break;;
+	esac
+done
