@@ -4,7 +4,7 @@ services:
     build:
       context: ./
       args:
-        CONTRAST_AGENT_VERSION: 3.7.10.17525
+        CONTRAST_AGENT_VERSION: 3.8.1.18696
     ports:
       - '8888:8080'
     environment:
