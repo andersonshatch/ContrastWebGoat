@@ -1,8 +1,8 @@
-FROM openjdk:8
+FROM eclipse-temurin:8
 
 ARG CONTRAST_AGENT_VERSION
 
-ADD https://repository.sonatype.org/service/local/artifact/maven/redirect?r=central-proxy&g=com.contrastsecurity&a=contrast-agent&v=$CONTRAST_AGENT_VERSION /opt/contrast/contrast.jar
+COPY --from=contrast/agent-java:3 /contrast/contrast-agent.jar /opt/contrast/contrast.jar
 
 COPY ./webgoat-container-7.1-exec.jar /usr/src/myapp/
 
