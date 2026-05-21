@@ -2,7 +2,7 @@ FROM eclipse-temurin:8
 
 ARG CONTRAST_AGENT_VERSION
 
-COPY --from=contrast/agent-java:3 /contrast/contrast-agent.jar /opt/contrast/contrast.jar
+COPY --from=contrast/agent-java:6 /contrast/contrast-agent.jar /opt/contrast/contrast.jar
 
 COPY ./webgoat-container-7.1-exec.jar /usr/src/myapp/
 
